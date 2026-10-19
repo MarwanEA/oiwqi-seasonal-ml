@@ -100,3 +100,7 @@ shap:
 bootstrap:
   performance_B: 5000
   shap_B: 500
+
+learning_curves:
+  sizes: [10, 12, 14, 16, 19]
+  repeats: 30
