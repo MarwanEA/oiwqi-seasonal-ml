@@ -16,7 +16,7 @@ features:
 models:
   base_learners: [Lasso, ExtraTrees, SVR]   # fixed a priori for Stacking and Voting
   optuna_trials: 80
-  explained: auto   # or a mapping {season: model}
+  explained: auto   # auto: best original-protocol R2 among models with an exact explainer (linear, TreeSHAP); or {season: model}
 
 grids:
   XGBoost:
@@ -82,6 +82,7 @@ validation:
   inner_cv_folds: 4         # nested CV, inner K-fold on the outer-training wells
   inner_shuffle: true
   scale_in_fold: false      # true: scaler fitted inside every fold for scale-sensitive models
+  nested_models: all        # or a list of model names
 
 groups:
   Salinity: [EC, TDS, Cl, SO4]
@@ -94,7 +95,7 @@ shap:
   corr_nsamples: 20000      # Monte Carlo samples of the correlation-dependent linear explainer
   kernel_nsamples: 10000    # KernelSHAP samples
   permutation_repeats: 200
-  single_class_models: [ExtraTrees, Ridge]
+  single_class_models: {ExtraTrees: tree, Ridge: interv}   # explained in every season, model: explainer
   pairs: {}                 # optional {season: [[A, B], ...]} for pairwise rank probabilities
 
 bootstrap:
@@ -104,3 +105,21 @@ bootstrap:
 learning_curves:
   sizes: [10, 12, 14, 16, 19]
   repeats: 30
+
+# Reduced settings used with --synthetic unless --full is given (for a fast end-to-end check).
+profiles:
+  quick:
+    models: {optuna_trials: 5}
+    validation: {nested_models: [Ridge, Lasso, ExtraTrees]}
+    shap: {corr_nsamples: 2000, kernel_nsamples: 500, permutation_repeats: 10}
+    bootstrap: {performance_B: 500, shap_B: 20}
+    learning_curves: {sizes: [10, 19], repeats: 3}
+    grids:
+      XGBoost: {n_estimators: [100], max_depth: [3, 5], learning_rate: [0.1], reg_alpha: [0], reg_lambda: [1.0],
+                subsample: [1.0], colsample_bytree: [1.0]}
+      RandomForest: {n_estimators: [100], max_depth: [null, 5], min_samples_split: [2], min_samples_leaf: [1, 2]}
+      ExtraTrees: {n_estimators: [100], max_depth: [null, 5], min_samples_split: [2, 5]}
+      GradientBoosting: {n_estimators: [100], max_depth: [3], learning_rate: [0.05, 0.1], subsample: [1.0]}
+      LightGBM: {n_estimators: [100], max_depth: [3, -1], learning_rate: [0.1], num_leaves: [15], reg_alpha: [0],
+                 reg_lambda: [1.0]}
+      CatBoost: {iterations: [100], depth: [4], learning_rate: [0.05, 0.1], l2_leaf_reg: [3]}

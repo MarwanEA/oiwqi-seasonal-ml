@@ -1,4 +1,4 @@
-"""Configuration loading (YAML) with optional dotted-key overrides."""
+"""Configuration loading (YAML): default file, optional profile, user file and overrides."""
 
 from __future__ import annotations
 
@@ -19,9 +19,12 @@ def _merge(base: dict, extra: dict) -> dict:
     return out
 
 
-def load_config(path: str | Path | None = None, overrides: dict[str, Any] | None = None) -> dict:
-    """Load the default configuration, then a user file (merged on top), then overrides."""
+def load_config(path: str | Path | None = None, overrides: dict[str, Any] | None = None,
+                profile: str | None = None) -> dict:
+    """Merge, in order: the default configuration, a named profile from it, a user file, then overrides."""
     cfg = yaml.safe_load(DEFAULT_CONFIG.read_text(encoding="utf-8"))
+    if profile:
+        cfg = _merge(cfg, cfg["profiles"][profile])
     if path is not None and Path(path).resolve() != DEFAULT_CONFIG.resolve():
         cfg = _merge(cfg, yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {})
     return _merge(cfg, overrides or {})

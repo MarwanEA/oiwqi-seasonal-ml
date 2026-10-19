@@ -24,13 +24,16 @@ from . import models as M
 from .validation import run_parallel, with_params
 
 ADDITIVITY_TOL = 1e-3
+# Interventional TreeSHAP with a background set fails for XGBoost 3.3 under shap 0.52 ("categorical split"
+# error without categorical features), so XGBoost models fall back to KernelSHAP, as LightGBM does.
+TREE_EXPLAINED = [m for m in M.TREES if m not in ("LightGBM", "XGBoost", M.OPTUNA)]
 
 
 def explainer_kind(model_name: str) -> str:
-    """Default explainer for a model: linear -> corr, tree -> tree, otherwise kernel."""
+    """Default explainer for a model: linear -> corr, supported trees -> tree, otherwise kernel."""
     if model_name in M.LINEAR:
         return "corr"
-    if model_name in M.TREES and model_name != "LightGBM":
+    if model_name in TREE_EXPLAINED:
         return "tree"
     return "kernel"
 

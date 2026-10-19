@@ -32,3 +32,12 @@ def test_station_labels_unchanged(tmp_path):
 
 def test_missing_column_is_reported():
     assert any("missing column: SO4" in p for p in validate(_table().drop(columns="SO4"), CFG))
+
+
+def test_user_file_overrides_profile(tmp_path):
+    from oiwqi_ml.config import load_config
+    f = tmp_path / "u.yaml"
+    f.write_text("bootstrap: {shap_B: 4}\n")
+    c = load_config(f, profile="quick")
+    assert c["bootstrap"]["shap_B"] == 4 and c["bootstrap"]["performance_B"] == 500
+    assert c["grids"]["Ridge"] == load_config()["grids"]["Ridge"]
