@@ -75,3 +75,10 @@ lightgbm_small_sample_grid:
   num_leaves: [4, 8, 15]
   learning_rate: [0.05, 0.1]
   n_estimators: [100, 300]
+
+validation:
+  test_size: 0.2            # fixed split used by the original protocol
+  original_cv_folds: 4      # unshuffled K-fold on the training part of the split
+  inner_cv_folds: 4         # nested CV, inner K-fold on the outer-training wells
+  inner_shuffle: true
+  scale_in_fold: false      # true: scaler fitted inside every fold for scale-sensitive models
