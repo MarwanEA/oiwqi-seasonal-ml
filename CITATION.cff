@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "oiwqi-seasonal-ml: additive irrigation water-quality index, seasonal machine-learning surrogates and SHAP"
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: "El Aoumrani"
+    given-names: "Marouan"
+    affiliation: "Faculty of Sciences, Abdelmalek Essaadi University, Tetouan, Morocco"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # placeholder, to be replaced
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.0000000"  # placeholder, assigned on archiving
+    description: "Archived release (placeholder)"
+repository-code: "https://github.com/MarwanEA/oiwqi-seasonal-ml"
+keywords:
+  - irrigation water quality
+  - groundwater
+  - machine learning
+  - SHAP
+  - leave-one-out cross-validation
+  - nested cross-validation

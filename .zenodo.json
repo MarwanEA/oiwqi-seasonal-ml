@@ -1,0 +1,30 @@
+{
+  "upload_type": "software",
+  "title": "oiwqi-seasonal-ml: additive irrigation water-quality index, seasonal machine-learning surrogates and SHAP",
+  "version": "1.0.0",
+  "description": "Python code to compute an additive irrigation water-quality index from groundwater chemistry, train machine-learning surrogates of the index for several hydrological phases, validate them with leave-one-out and nested cross-validation, and explain them with SHAP. Runs end to end on a synthetic dataset.",
+  "creators": [
+    {
+      "name": "El Aoumrani, Marouan",
+      "affiliation": "Faculty of Sciences, Abdelmalek Essaadi University, Tetouan, Morocco",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "irrigation water quality",
+    "groundwater",
+    "machine learning",
+    "SHAP",
+    "leave-one-out cross-validation",
+    "nested cross-validation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.0000/placeholder",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ]
+}
