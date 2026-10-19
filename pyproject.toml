@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oiwqi-seasonal-ml"
+version = "1.0.0"
+description = "Additive irrigation water-quality index (OIWQI), seasonal model benchmarking with LOOCV and nested CV, and SHAP robustness analyses."
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Marouan El Aoumrani" }]
+dependencies = [
+    "numpy", "pandas", "scikit-learn", "xgboost", "lightgbm", "catboost", "shap", "optuna",
+    "scipy", "joblib", "matplotlib", "statsmodels", "psutil", "PyYAML",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+oiwqi_ml = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"

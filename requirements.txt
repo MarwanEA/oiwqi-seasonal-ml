@@ -1,0 +1,15 @@
+# Pinned versions used to develop and test the pipeline (Python 3.14)
+numpy==2.4.6
+pandas==3.0.3
+scikit-learn==1.9.0
+xgboost==3.3.0
+lightgbm==4.6.0
+catboost==1.2.10
+shap==0.52.0
+optuna==4.9.0
+scipy==1.18.0
+joblib==1.5.3
+matplotlib==3.11.0
+statsmodels==0.14.6
+psutil==7.2.2
+PyYAML==6.0.3

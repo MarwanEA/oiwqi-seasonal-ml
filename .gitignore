@@ -1,0 +1,25 @@
+# data and outputs (never committed)
+data/*
+!data/README.md
+!data/.gitkeep
+results/
+figures/
+checkpoints/
+*.pkl
+*.xlsx
+catboost_info/
+
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# editor settings
+.vscode/
+.idea/
