@@ -1,0 +1,14 @@
+# Default configuration. Paths are relative to the repository root unless given on the command line.
+seed: 42
+
+data:
+  seasons: [dry, first_flush, dilution]
+  season_labels: {dry: Dry, first_flush: First Flush, dilution: Dilution}
+  files: {dry: dry.csv, first_flush: first_flush.csv, dilution: dilution.csv}
+  station_column: Station
+  target: O_IWQI
+  ec_raw_column: CE
+
+features:
+  all: [NO3, pH, EC, TDS, HCO3, Cl, Mg, Ca, Na, K, SO4, SAR, "Na%", MAR, PI, RSBC, SSP]
+  measured: [NO3, pH, EC, TDS, HCO3, Cl, Mg, Ca, Na, K, SO4]
