@@ -29,7 +29,11 @@ oiwqi_ml = ["py.typed"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-q"
-filterwarnings = ["ignore::sklearn.exceptions.ConvergenceWarning"]
+filterwarnings = [
+    "ignore::sklearn.exceptions.ConvergenceWarning",
+    "ignore::FutureWarning:shap",
+    "ignore::PendingDeprecationWarning",
+]
 
 [tool.ruff]
 line-length = 120

@@ -82,3 +82,21 @@ validation:
   inner_cv_folds: 4         # nested CV, inner K-fold on the outer-training wells
   inner_shuffle: true
   scale_in_fold: false      # true: scaler fitted inside every fold for scale-sensitive models
+
+groups:
+  Salinity: [EC, TDS, Cl, SO4]
+  Sodium/sodicity: [Na, SAR, "Na%", SSP, PI]
+  Alkalinity/carbonate: [HCO3, RSBC, pH]
+  Nutrients: [NO3]
+  Other cations/hardness: [Ca, Mg, MAR, K]
+
+shap:
+  corr_nsamples: 20000      # Monte Carlo samples of the correlation-dependent linear explainer
+  kernel_nsamples: 10000    # KernelSHAP samples
+  permutation_repeats: 200
+  single_class_models: [ExtraTrees, Ridge]
+  pairs: {}                 # optional {season: [[A, B], ...]} for pairwise rank probabilities
+
+bootstrap:
+  performance_B: 5000
+  shap_B: 500
