@@ -10,7 +10,7 @@ machine-learning surrogates of the index for several hydrological phases, valida
 cross-validation (LOOCV), and explain them with SHAP.
 
 The code was developed for a small groundwater dataset (tens of wells, three hydrological phases) in a
-semi-arid setting. Associated publication: under review; citation will be added.
+semi-arid setting. The associated article and the software citation are listed under [How to cite](#how-to-cite).
 
 Spatial interpolation and mapping are not included in this repository.
 
@@ -160,8 +160,21 @@ of the associated study on reasonable request. The synthetic generator lets ever
 
 ## How to cite
 
-Citation metadata are in [CITATION.cff](CITATION.cff). A DOI will be added when the code is archived, and the
-citation of the associated publication will be added when it is available.
+If you use this code, please cite the article and the software. Machine-readable metadata are in
+[CITATION.cff](CITATION.cff).
+
+**Article**
+
+Ali El Mansour, Saida Ait Boughrous, Morad Chahid, Marouan El Aoumrani, Ahmed Mahmoud Ahmed Oubeid,
+Mourad Aqnouy, Amine Assouguem, Ghadeer M. Albadrani, Hader Ibrahim Sakr, Abdelaaziz El Hibaoui and
+Ali Ait Boughrous. Explainable machine learning and SHAP reveal seasonal hydrochemical controls governing the
+Overall Irrigation Water Quality Index under tri-seasonal conditions. *Scientific Reports* (submitted).
+DOI to be added on publication.
+
+**Software**
+
+Marouan El Aoumrani, Ali El Mansour, Abdelaaziz El Hibaoui and Ali Ait Boughrous. oiwqi-seasonal-ml v1.0.0.
+Zenodo DOI to be added on release.
 
 ## Licence
 

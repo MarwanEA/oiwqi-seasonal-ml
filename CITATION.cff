@@ -7,12 +7,19 @@ license: MIT
 authors:
   - family-names: "El Aoumrani"
     given-names: "Marouan"
-    affiliation: "Faculty of Sciences, Abdelmalek Essaadi University, Tetouan, Morocco"
-    orcid: "https://orcid.org/0000-0000-0000-0000"  # placeholder, to be replaced
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.0000000"  # placeholder, assigned on archiving
-    description: "Archived release (placeholder)"
+    affiliation: "Faculty of Science, Abdelmalek Essaâdi University, Tétouan, Morocco"
+  - family-names: "El Mansour"
+    given-names: "Ali"
+    affiliation: "Bio-resources, Environment and Health, Faculty of Science and Technology of Errachidia, Moulay Ismaïl University, Meknes, Morocco"
+    orcid: "https://orcid.org/0009-0002-8640-7452"
+  - family-names: "El Hibaoui"
+    given-names: "Abdelaaziz"
+    affiliation: "Faculty of Science, Abdelmalek Essaâdi University, Tétouan, Morocco"
+    orcid: "https://orcid.org/0000-0003-2167-0831"
+  - family-names: "Ait Boughrous"
+    given-names: "Ali"
+    affiliation: "Bio-resources, Environment and Health, Faculty of Science and Technology of Errachidia, Moulay Ismaïl University, Meknes, Morocco"
+    orcid: "https://orcid.org/0000-0001-5611-6705"
 repository-code: "https://github.com/MarwanEA/oiwqi-seasonal-ml"
 keywords:
   - irrigation water quality
@@ -21,3 +28,32 @@ keywords:
   - SHAP
   - leave-one-out cross-validation
   - nested cross-validation
+preferred-citation:
+  type: article
+  status: submitted
+  title: "Explainable machine learning and SHAP reveal seasonal hydrochemical controls governing the Overall Irrigation Water Quality Index under tri-seasonal conditions"
+  journal: "Scientific Reports"
+  year: 2026
+  authors:
+    - given-names: "Ali"
+      family-names: "El Mansour"
+    - given-names: "Saida"
+      family-names: "Ait Boughrous"
+    - given-names: "Morad"
+      family-names: "Chahid"
+    - given-names: "Marouan"
+      family-names: "El Aoumrani"
+    - given-names: "Ahmed Mahmoud Ahmed"
+      family-names: "Oubeid"
+    - given-names: "Mourad"
+      family-names: "Aqnouy"
+    - given-names: "Amine"
+      family-names: "Assouguem"
+    - given-names: "Ghadeer M."
+      family-names: "Albadrani"
+    - given-names: "Hader Ibrahim"
+      family-names: "Sakr"
+    - given-names: "Abdelaaziz"
+      family-names: "El Hibaoui"
+    - given-names: "Ali"
+      family-names: "Ait Boughrous"
